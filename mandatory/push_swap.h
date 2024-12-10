@@ -47,7 +47,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 
 // ft_check_sort.c //
 
-int    ft_is_sort(t_stacks *stacks);
+int		ft_is_sort(t_stacks *stacks);
 
 // ft_check_tools.c //
 

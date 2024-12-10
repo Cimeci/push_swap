@@ -6,7 +6,7 @@
 #    By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 10:50:48 by inowak--          #+#    #+#              #
-#    Updated: 2024/12/09 10:42:40 by inowak--         ###   ########.fr        #
+#    Updated: 2024/12/10 13:46:49 by inowak--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ BONUS = checker
 
 CC = cc
 CFLAGS := -Wall -Wextra -Werror -g -I./mandatory -I./bonus
-AR = ar rcs
 
 PRINTF_FILES = lib/ft_printf/ft_pointer.c\
 				lib/ft_printf/ft_put.c\
@@ -66,6 +65,11 @@ OBJ_LIB = $(PRINTF_FILES:.c=.o) $(GNL_FILES:.c=.o) $(LIBFT_FILES:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
+
+bonus : $(BONUS)
+
+$(NAME): $(OBJ) $(OBJ_LIB) $(OBJ_MAIN)
+	@$(CC) $(OBJ) $(OBJ_MAIN) $(OBJ_LIB) -o $(NAME)
 	@echo "$(PURPLE)";
 	@echo " ######   ##   ##   #####   ##   ##            #####   ##   ##    ##     ######";
 	@echo "  ##  ##  ##   ##  ##   ##  ##   ##           ##   ##  ##   ##   ####     ##  ##";
@@ -76,8 +80,9 @@ all: $(NAME)
 	@echo " ####      #####    #####   ##   ##            #####   ##   ##  ##  ##   ####";
 	@echo "$(RESET)";
 
-bonus : $(BONUS)
-	@echo "$(CYAN)"
+$(BONUS): $(OBJ_BONUS) $(OBJ_LIB) $(OBJ)
+	@$(CC) $(OBJ_LIB) $(OBJ) $(OBJ_BONUS) -o $(BONUS)
+	@echo "$(YELLOW)"
 	@echo " ######    #####   ##   ##  ##   ##   #####"
 	@echo "  ##  ##  ##   ##  ###  ##  ##   ##  ##   ##"
 	@echo "  ##  ##  ##   ##  #### ##  ##   ##  #"
@@ -86,12 +91,6 @@ bonus : $(BONUS)
 	@echo "  ##  ##  ##   ##  ##   ##  ##   ##  ##   ##"
 	@echo " ######    #####   ##   ##   #####    #####"
 	@echo "$(RESET)"
-
-$(NAME): $(OBJ) $(OBJ_LIB) $(OBJ_MAIN)
-	@$(CC) $(OBJ) $(OBJ_MAIN) $(OBJ_LIB) -o $(NAME)
-
-$(BONUS): $(OBJ_BONUS) $(OBJ_LIB) $(OBJ)
-	@$(CC) $(OBJ_LIB) $(OBJ) $(OBJ_BONUS) -o $(BONUS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@

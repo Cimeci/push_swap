@@ -47,7 +47,7 @@ void	ft_checker(t_stacks *stacks);
 //    ft_modification.c    //
 /////////////////////////////
 
-int	apply_modification(char *line, t_stacks *stacks);
+int		apply_modification(char *line, t_stacks *stacks);
 
 /////////////////////////////
 //    ft_moves_a_bonus.c   //

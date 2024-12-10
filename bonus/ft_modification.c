@@ -48,9 +48,10 @@ static void	apply_modif_a(char *line, t_stacks *stacks, t_moves *moves)
 	else if (ft_strcmp(line, moves->pa) == 0)
 		pa_bonus(stacks);
 }
+
 static void	apply_modif_b(char *line, t_stacks *stacks, t_moves *moves)
 {
-	if(ft_strcmp(line, moves->rb) == 0)
+	if (ft_strcmp(line, moves->rb) == 0)
 		rb_bonus(stacks);
 	else if (ft_strcmp(line, moves->rrb) == 0)
 		rrb_bonus(stacks);
@@ -59,8 +60,6 @@ static void	apply_modif_b(char *line, t_stacks *stacks, t_moves *moves)
 	else if (ft_strcmp(line, moves->pb) == 0)
 		pb_bonus(stacks);
 }
-
-#include <stdio.h>
 
 int	apply_modification(char *line, t_stacks *stacks)
 {

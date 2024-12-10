@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_moves_b_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:02:18 by inowak--          #+#    #+#             */
-/*   Updated: 2024/12/09 23:52:22 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/10 13:30:26 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sb_bonus(t_stacks *stacks)
 	long	temp;
 
 	if (stacks->size_b < 2)
-		return ; 
+		return ;
 	temp = stacks->b[0];
 	stacks->b[0] = stacks->b[1];
 	stacks->b[1] = temp;
@@ -29,7 +29,7 @@ void	rb_bonus(t_stacks *stacks)
 	int		i;
 
 	if (stacks->size_b < 2)
-		return ; 
+		return ;
 	temp = stacks->b[0];
 	i = 0;
 	while (i < stacks->size_b - 1)
@@ -61,7 +61,7 @@ void	pb_bonus(t_stacks *stacks)
 {
 	int	i;
 
-	if (!stacks->a || !stacks->b)
+	if (!stacks->a || !stacks->b || stacks->size_a < 1)
 		return ;
 	stacks->size_b++;
 	i = stacks->size_b;
