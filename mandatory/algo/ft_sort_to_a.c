@@ -3,34 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_to_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 12:58:50 by inowak--          #+#    #+#             */
-/*   Updated: 2024/12/07 19:38:16 by inowak--         ###   ########.fr       */
+/*   Updated: 2024/12/12 23:05:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-int	ft_count_btw_max_and_min(t_stacks *stacks)
-{
-	int	min;
-	int	max;
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	min = ft_search_min_for_a(stacks);
-	max = ft_search_max_for_a(stacks);
-	while (i < stacks->size_b)
-	{
-		if (stacks->b[i] < stacks->a[max] && stacks->b[i] > stacks->a[min])
-			count++;
-		i++;
-	}
-	return (count);
-}
 
 int	ft_search_target(t_stacks *stacks, int index_b)
 {
