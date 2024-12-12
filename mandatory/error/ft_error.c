@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 09:21:36 by inowak--          #+#    #+#             */
-/*   Updated: 2024/12/09 10:50:12 by inowak--         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:21:09 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	ft_puterror(void)
 
 void	ft_look_error(char **argv, t_stacks *stacks)
 {
-	if (!ft_check_digit(argv) || !ft_check_after_sign(argv))
+	if (!ft_check_digit(argv) || !ft_check_after_sign(argv)
+		|| !ft_check_overflow(argv))
 		ft_clean(stacks, 1);
 	if (!(ft_check_duplicate(stacks->a, stacks->size_a)))
 		ft_clean(stacks, 1);

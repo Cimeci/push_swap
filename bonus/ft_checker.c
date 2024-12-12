@@ -104,7 +104,7 @@ void	ft_checker(t_stacks *stacks)
 		ft_clean(stacks, 1);
 	}
 	i = 0;
-	while (i < size && stacks->a[i] == sorted_tab[i])
+	while (i < size && stacks->a[i] == sorted_tab[i] && stacks->size_b == 0)
 		i++;
 	if (i == size)
 		ft_printf("OK\n");

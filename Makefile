@@ -6,7 +6,7 @@
 #    By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 10:50:48 by inowak--          #+#    #+#              #
-#    Updated: 2024/12/11 13:49:17 by inowak--         ###   ########.fr        #
+#    Updated: 2024/12/12 11:14:34 by inowak--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,10 @@ PRINTF_FILES = lib/ft_printf/ft_pointer.c\
 GNL_FILES = lib/gnl/get_next_line_utils.c\
 			lib/gnl/get_next_line.c\
 
-LIBFT_FILES = lib/ft_split.c\
-				lib/ft_tools.c\
+LIBFT_FILES = lib/libft/ft_split.c\
+				lib/libft/ft_strcmp.c\
+				lib/libft/ft_sort_long_tab.c\
+				lib/libft/ft_free.c\
 
 SRC = mandatory/moves/ft_moves_a.c\
 		mandatory/moves/ft_moves_b.c\
@@ -49,6 +51,7 @@ SRC = mandatory/moves/ft_moves_a.c\
 		mandatory/parsing/ft_check_tools.c\
 		mandatory/parsing/ft_check.c\
 		mandatory/parsing/ft_check_sort.c\
+		mandatory/parsing/ft_check_overflow.c\
 
 SRC_MAIN = mandatory/main.c\
 

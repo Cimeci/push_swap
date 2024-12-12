@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:02:18 by inowak--          #+#    #+#             */
-/*   Updated: 2024/12/10 13:30:26 by inowak--         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:05:42 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ void	pb_bonus(t_stacks *stacks)
 {
 	int	i;
 
-	if (!stacks->a || !stacks->b || stacks->size_a < 1)
+	if (!stacks->a || !stacks->b || stacks->size_a <= 0)
 		return ;
-	stacks->size_b++;
 	i = stacks->size_b;
 	while (i > 0)
 	{
@@ -71,6 +70,7 @@ void	pb_bonus(t_stacks *stacks)
 		i--;
 	}
 	stacks->b[0] = stacks->a[0];
+	stacks->size_b++;
 	i = 0;
 	while (i < stacks->size_a - 1)
 	{

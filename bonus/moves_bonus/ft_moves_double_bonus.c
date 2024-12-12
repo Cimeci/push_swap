@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 17:59:55 by inowak--          #+#    #+#             */
-/*   Updated: 2024/12/09 16:43:01 by inowak--         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:18:30 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rr_bonus(t_stacks *stacks)
 	long	temp;
 	int		i;
 
+	if (stacks->size_a < 2 || stacks->size_b < 2)
+		return ;
 	temp = stacks->b[0];
 	i = 0;
 	while (i < stacks->size_b - 1)
@@ -40,6 +42,8 @@ void	rrr_bonus(t_stacks *stacks)
 	long	temp;
 	int		i;
 
+	if (stacks->size_a < 2 || stacks->size_b < 2)
+		return ;
 	temp = stacks->b[stacks->size_b - 1];
 	i = stacks->size_b - 1;
 	while (i > 0)
@@ -62,6 +66,8 @@ void	ss_bonus(t_stacks *stacks)
 {
 	long	temp;
 
+	if (stacks->size_a < 2 || stacks->size_b < 2)
+		return ;
 	temp = stacks->a[0];
 	stacks->a[0] = stacks->a[1];
 	stacks->a[1] = temp;
